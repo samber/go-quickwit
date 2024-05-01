@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	"slices"
 	"sync"
 	"time"
 )
@@ -37,7 +36,7 @@ func New(cfg Config) *Client {
 	if cfg.BatchBytes <= 0 {
 		panic("wrong BatchWait option")
 	}
-	if !slices.Contains([]CommitMode{Auto, WaitFor, Force}, cfg.Commit) {
+	if cfg.Commit != Auto && cfg.Commit != WaitFor && cfg.Commit != Force {
 		panic("wrong Commit option")
 	}
 

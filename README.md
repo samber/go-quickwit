@@ -2,7 +2,7 @@
 # A Go ingestion client for Quickwit
 
 [![tag](https://img.shields.io/github/tag/samber/go-quickwit.svg)](https://github.com/samber/go-quickwit/releases)
-![Go Version](https://img.shields.io/badge/Go-%3E%3D%201.16.0-%23007d9c)
+![Go Version](https://img.shields.io/badge/Go-%3E%3D%201.18.0-%23007d9c)
 [![GoDoc](https://godoc.org/github.com/samber/go-quickwit?status.svg)](https://pkg.go.dev/github.com/samber/go-quickwit)
 ![Build Status](https://github.com/samber/go-quickwit/actions/workflows/test.yml/badge.svg)
 [![Go report](https://goreportcard.com/badge/github.com/samber/go-quickwit)](https://goreportcard.com/report/github.com/samber/go-quickwit)
