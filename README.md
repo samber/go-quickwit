@@ -10,7 +10,9 @@
 [![Contributors](https://img.shields.io/github/contributors/samber/go-quickwit)](https://github.com/samber/go-quickwit/graphs/contributors)
 [![License](https://img.shields.io/github/license/samber/go-quickwit)](./LICENSE)
 
-A [Quickwit](https://quickwit.io/) push client for Go. If you're looking for a search library or Quickwit management interface, check the [official library](https://github.com/quickwit-oss/quickwit-go).
+A [Quickwit](https://quickwit.io/) push client for Go. See [slog-quickwit](https://github.com/samber/slog-quickwit/) for a slog handler implementation.
+
+If you're looking for a search library or Quickwit management interface, check the [official library](https://github.com/quickwit-oss/quickwit-go).
 
 ## 🚀 Install
 
