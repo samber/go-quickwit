@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  quickwit:
+    image: quickwit/quickwit:0.8.1
+    ports:
+      - '7280:7280'
+    command: run
