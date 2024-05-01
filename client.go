@@ -127,7 +127,6 @@ func (c *Client) sendBatch(batch *batch) {
 }
 
 func (c *Client) send(buf *bytes.Buffer) (int, error) {
-	fmt.Println("sending", buf.String())
 	ctx, cancel := context.WithTimeout(context.Background(), c.cfg.Timeout)
 	defer cancel()
 

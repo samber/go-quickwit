@@ -115,6 +115,6 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2023 [Samuel Berthe](https://github.com/samber).
+Copyright © 2024 [Samuel Berthe](https://github.com/samber).
 
 This project is [MIT](./LICENSE) licensed.
