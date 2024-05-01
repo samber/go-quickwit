@@ -2,7 +2,6 @@ package quickwit
 
 import (
 	"context"
-	"fmt"
 	"math/rand"
 	"time"
 )
@@ -35,28 +34,10 @@ func newBackoff(ctx context.Context, cfg BackoffConfig) *backoff {
 	}
 }
 
-// reset the backoff back to its initial condition
-func (b *backoff) reset() {
-	b.numRetries = 0
-	b.nextDelayMin = b.cfg.MinBackoff
-	b.nextDelayMax = doubleDuration(b.cfg.MinBackoff, b.cfg.MaxBackoff)
-}
-
 // ongoing returns true if caller should keep going
 func (b *backoff) ongoing() bool {
 	// stop if Context has errored or max retry count is exceeded
 	return b.ctx.Err() == nil && (b.cfg.MaxRetries == 0 || b.numRetries < b.cfg.MaxRetries)
-}
-
-// err returns the reason for terminating the backoff, or nil if it didn't terminate
-func (b *backoff) err() error {
-	if b.ctx.Err() != nil {
-		return b.ctx.Err()
-	}
-	if b.cfg.MaxRetries != 0 && b.numRetries >= b.cfg.MaxRetries {
-		return fmt.Errorf("terminated after %d retries", b.numRetries)
-	}
-	return nil
 }
 
 // Wait sleeps for the backoff time then increases the retry count and backoff time

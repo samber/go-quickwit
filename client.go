@@ -10,10 +10,6 @@ import (
 	"time"
 )
 
-const (
-	jsonContentType = "application/json"
-)
-
 type Client struct {
 	cfg     Config
 	once    sync.Once
