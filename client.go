@@ -130,7 +130,7 @@ func (c *Client) send(buf *bytes.Buffer) (int, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), c.cfg.Timeout)
 	defer cancel()
 
-	url := fmt.Sprintf("%s/api/v1/%s/ingest?commit=%s", string(c.cfg.Commit), c.cfg.IndexID, c.cfg.URL)
+	url := fmt.Sprintf("%s/api/v1/%s/ingest?commit=%s", c.cfg.URL, c.cfg.IndexID, string(c.cfg.Commit))
 
 	req, err := http.NewRequestWithContext(ctx, "POST", url, buf)
 	if err != nil {
