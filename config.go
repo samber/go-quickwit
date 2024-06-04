@@ -30,6 +30,8 @@ type Config struct {
 	URL    string
 	Client http.Client
 
+	IndexID string
+
 	BatchWait  time.Duration
 	BatchBytes int
 	Commit     CommitMode
@@ -39,10 +41,12 @@ type Config struct {
 }
 
 // NewDefaultConfig creates a default configuration for a given Quickwit cluster.
-func NewDefaultConfig(url string) Config {
+func NewDefaultConfig(url string, indexID string) Config {
 	return Config{
 		URL:    url,
 		Client: http.Client{},
+
+		IndexID: indexID,
 
 		BatchWait:  DefaultBatchWait,
 		BatchBytes: DefaultBatchBytes,
