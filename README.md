@@ -31,6 +31,8 @@ type Config struct {
 	URL    string
 	Client http.Client
 
+	IndexID string
+
 	BatchWait  time.Duration
 	BatchBytes int
 	Commit     CommitMode   // either quickwit.Auto, quickwit.WaitFor or quickwit.Force
@@ -67,7 +69,7 @@ Then push logs:
 import "github.com/samber/go-quickwit"
 
 func main() {
-	client := quickwit.NewWithDefault("http://localhost:7280")
+	client := quickwit.NewWithDefault("http://localhost:7280", "my-index")
 	defer client.Stop() // flush and stop
 
 	for i := 0; i < 10; i++ {
