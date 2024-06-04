@@ -18,8 +18,6 @@ const (
 	DefaultBatchBytes int           = 10 * 1024 * 1024 // 10 MB
 	DefautCommitMode                = Auto
 
-	DefaultIndexID = "test"
-
 	DefaultMinBackoff time.Duration = 500 * time.Millisecond
 	DefaultMaxBackoff time.Duration = 5 * time.Minute
 	DefaultMaxRetries int           = 5
@@ -43,12 +41,12 @@ type Config struct {
 }
 
 // NewDefaultConfig creates a default configuration for a given Quickwit cluster.
-func NewDefaultConfig(url string) Config {
+func NewDefaultConfig(url string, indexID string) Config {
 	return Config{
 		URL:    url,
 		Client: http.Client{},
 
-		IndexID: DefaultIndexID,
+		IndexID: indexID,
 
 		BatchWait:  DefaultBatchWait,
 		BatchBytes: DefaultBatchBytes,

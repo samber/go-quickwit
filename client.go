@@ -26,6 +26,10 @@ func New(cfg Config) *Client {
 		panic("missing Quickwit URL")
 	}
 
+	if cfg.IndexID == "" {
+		panic("missing Quickwit Index ID")
+	}
+
 	if cfg.BatchWait < 0 {
 		panic("wrong BatchWait option")
 	}
@@ -56,8 +60,8 @@ func New(cfg Config) *Client {
 }
 
 // NewWithDefault creates a new client with default configuration.
-func NewWithDefault(url string) *Client {
-	return New(NewDefaultConfig(url))
+func NewWithDefault(url string, indexID string) *Client {
+	return New(NewDefaultConfig(url, indexID))
 }
 
 func (c *Client) run() {
