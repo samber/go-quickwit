@@ -18,6 +18,8 @@ const (
 	DefaultBatchBytes int           = 10 * 1024 * 1024 // 10 MB
 	DefautCommitMode                = Auto
 
+	DefaultIndexID = "test"
+
 	DefaultMinBackoff time.Duration = 500 * time.Millisecond
 	DefaultMaxBackoff time.Duration = 5 * time.Minute
 	DefaultMaxRetries int           = 5
@@ -29,6 +31,8 @@ const (
 type Config struct {
 	URL    string
 	Client http.Client
+
+	IndexID string
 
 	BatchWait  time.Duration
 	BatchBytes int
@@ -43,6 +47,8 @@ func NewDefaultConfig(url string) Config {
 	return Config{
 		URL:    url,
 		Client: http.Client{},
+
+		IndexID: DefaultIndexID,
 
 		BatchWait:  DefaultBatchWait,
 		BatchBytes: DefaultBatchBytes,
