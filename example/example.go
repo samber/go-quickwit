@@ -22,7 +22,6 @@ func main() {
 			"timestamp": time.Now().Unix(),
 			"message":   fmt.Sprintf("hello %d", i),
 		}
-		fmt.Println(msg)
 
 		client.Push(msg)
 		time.Sleep(1 * time.Second)

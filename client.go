@@ -149,7 +149,7 @@ func (c *Client) send(buf *bytes.Buffer) (int, error) {
 		return 0, err
 	}
 
-	defer resp.Body.Close()
+	defer resp.Body.Close() //nolint:errcheck
 
 	if resp.StatusCode >= 400 {
 		body, _ := io.ReadAll(resp.Body)
